@@ -1,0 +1,114 @@
+{
+  "spec2": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 48.4,
+        "min": 48.4,
+        "max": 48.4
+      },
+      "predicted_per_second": {
+        "median": 64.5,
+        "min": 64.5,
+        "max": 64.5
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 1272.9,
+        "min": 1272.9,
+        "max": 1272.9
+      },
+      "predicted_per_second": {
+        "median": 70.2,
+        "min": 70.2,
+        "max": 70.2
+      }
+    }
+  },
+  "spec3": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 49.3,
+        "min": 49.3,
+        "max": 49.3
+      },
+      "predicted_per_second": {
+        "median": 68.4,
+        "min": 68.4,
+        "max": 68.4
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 1296.6,
+        "min": 1296.6,
+        "max": 1296.6
+      },
+      "predicted_per_second": {
+        "median": 89.9,
+        "min": 89.9,
+        "max": 89.9
+      }
+    }
+  },
+  "spec4": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 48.3,
+        "min": 48.3,
+        "max": 48.3
+      },
+      "predicted_per_second": {
+        "median": 68.9,
+        "min": 68.9,
+        "max": 68.9
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 1314.7,
+        "min": 1314.7,
+        "max": 1314.7
+      },
+      "predicted_per_second": {
+        "median": 100.9,
+        "min": 100.9,
+        "max": 100.9
+      }
+    }
+  },
+  "spec6": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 52.7,
+        "min": 52.7,
+        "max": 52.7
+      },
+      "predicted_per_second": {
+        "median": 70.2,
+        "min": 70.2,
+        "max": 70.2
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 1300.2,
+        "min": 1300.2,
+        "max": 1300.2
+      },
+      "predicted_per_second": {
+        "median": 80.1,
+        "min": 80.1,
+        "max": 80.1
+      }
+    }
+  }
+}

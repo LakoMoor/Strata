@@ -1,0 +1,6 @@
+{
+  "engine_version": "0.1.55",
+  "component": "linux-x86_64-cuda-cuda12",
+  "binary_sha256": "27875ca813f962daab2e8299fce1664bc4769e1554e9c588e2f0f04b936c908b",
+  "runtime_draft_vocab_sha256": "25d7fd1670a2e0ec885868d1718d410a3baab03bceeacf0a156cf93ffe4e1ef4"
+}

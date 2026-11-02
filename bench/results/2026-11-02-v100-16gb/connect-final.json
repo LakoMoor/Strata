@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "harness": "opencode",
+  "checked_server": "http://127.0.0.1:18080",
+  "checks": [
+    {
+      "name": "prompt",
+      "ok": true,
+      "detail": "It answered: 'pong'.",
+      "seconds": 1.4
+    },
+    {
+      "name": "tool call",
+      "ok": true,
+      "detail": "It called get_weather with {\"city\": \"Paris\"}.",
+      "seconds": 2.1
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "strata/coder",
+  "providers": {
+    "strata": {
+      "name": "Strata V100 Coder",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:18080/v1"
+      },
+      "models": {
+        "coder": {
+          "modelID": "qwen3.8-flash-next-coder-iq1_m",
+          "name": "Coder IQ1_M 256K",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ],
+            "reasoning": {
+              "supported": true
+            }
+          },
+          "compatibility": {
+            "reasoningField": "reasoning_content",
+            "maxTokensField": "max_tokens"
+          },
+          "limit": {
+            "context": 262144,
+            "input": 196608,
+            "output": 65536
+          },
+          "body": {
+            "max_tokens": 65536
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "body": {
+                "chat_template_kwargs": {
+                  "enable_thinking": false
+                }
+              }
+            },
+            {
+              "id": "think",
+              "body": {
+                "chat_template_kwargs": {
+                  "enable_thinking": true
+                },
+                "reasoning_effort": "high"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "buffer": 16384,
+    "keep": {
+      "tokens": 24000
+    }
+  }
+}

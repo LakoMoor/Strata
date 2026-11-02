@@ -1,0 +1,42 @@
+{
+  "started_utc": "2026-11-02T17:51:01Z",
+  "config_sha256": "fa6529f6e36eedf458dc3e10011d9848bec52d0da6b1d73ee2738cf34390e3c8",
+  "strata_version": "strata 0.2.9 (build 0.1.55; python 3.12.15 at /workspace/strata-v100/runtime/terminal/0.1.55/python/bin/python3.12)",
+  "arms": {
+    "workers8": {
+      "env": {},
+      "args": {
+        "--pool-workers": "8"
+      },
+      "config": {}
+    },
+    "workers16": {
+      "env": {},
+      "args": {
+        "--pool-workers": "16"
+      },
+      "config": {}
+    },
+    "workers24": {
+      "env": {},
+      "args": {
+        "--pool-workers": "24"
+      },
+      "config": {}
+    },
+    "workers32": {
+      "env": {},
+      "args": {
+        "--pool-workers": "32"
+      },
+      "config": {}
+    }
+  },
+  "rounds": 1,
+  "max_new": 384,
+  "long_words": 3500,
+  "temperature": 0,
+  "seed": 42,
+  "thinking": false,
+  "limits": "synthetic coding prompts; adaptive caches; no code execution or quality score"
+}

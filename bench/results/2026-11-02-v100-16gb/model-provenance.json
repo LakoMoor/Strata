@@ -1,0 +1,31 @@
+{
+  "model_repository": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
+  "model_revision": "5348543e0147355ac9cbcb031184a3546350988e",
+  "shards": {
+    "Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf": {
+      "bytes": 29608446496,
+      "sha256": "e11083ba855e7666b48ea3f2db6a9c3a20c18751a012cc24f948de91b7087fad",
+      "verified": true,
+      "acquisition": "download"
+    },
+    "Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00002-of-00002.gguf": {
+      "bytes": 28800138432,
+      "sha256": "316b46f3a2dbd68c900f43136ab9449f9dcc3725dfd8c794847c204bc161e113",
+      "verified": true,
+      "acquisition": "192-byte pinned GGUF header plus unchanged local NInfer IQ4_NL table",
+      "restoration_seconds": 143.32543671294115
+    }
+  },
+  "mtp_repository": "Maximilian228/Qwen3.8-Flash-Next-NVFP4-GPTQ-Strata",
+  "mtp_revision": "9b70ad3f640b2546449bd05387407a64113acf8b",
+  "mtp_sha256": {
+    "dense.bin": "c724dc0b0822ada5d2977bf5bde821605feabaa64ea2e0045b67ca656329070a",
+    "experts.bin": "09398406be61f1f54c93861f449e48b8df0bfccbc9ec9b2b7636775a6ea9244f",
+    "downloaded_draft_vocab.bin": "25d7fd1670a2e0ec885868d1718d410a3baab03bceeacf0a156cf93ffe4e1ef4"
+  },
+  "mtp_dense_and_experts_verified": true,
+  "runtime_draft_vocab": "Strata shipped Cyrillic subset (English/code and Cyrillic)",
+  "pack_dense_bytes": 1475120640,
+  "pack_experts_bin": false,
+  "runtime_draft_vocab_sha256": "25d7fd1670a2e0ec885868d1718d410a3baab03bceeacf0a156cf93ffe4e1ef4"
+}

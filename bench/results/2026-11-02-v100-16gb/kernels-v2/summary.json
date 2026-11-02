@@ -1,0 +1,114 @@
+{
+  "baseline": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 54.849999999999994,
+        "min": 53.8,
+        "max": 55.9
+      },
+      "predicted_per_second": {
+        "median": 67.4,
+        "min": 66.6,
+        "max": 68.2
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1213.75,
+        "min": 1189.8,
+        "max": 1237.7
+      },
+      "predicted_per_second": {
+        "median": 87.65,
+        "min": 82.1,
+        "max": 93.2
+      }
+    }
+  },
+  "volta": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 50.05,
+        "min": 44.9,
+        "max": 55.2
+      },
+      "predicted_per_second": {
+        "median": 69.9,
+        "min": 69.5,
+        "max": 70.3
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1290.35,
+        "min": 1261.3,
+        "max": 1319.4
+      },
+      "predicted_per_second": {
+        "median": 93.1,
+        "min": 86.4,
+        "max": 99.8
+      }
+    }
+  },
+  "fused": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 47.349999999999994,
+        "min": 46.8,
+        "max": 47.9
+      },
+      "predicted_per_second": {
+        "median": 68.6,
+        "min": 66.9,
+        "max": 70.3
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1219.3,
+        "min": 1174.8,
+        "max": 1263.8
+      },
+      "predicted_per_second": {
+        "median": 91.19999999999999,
+        "min": 86.1,
+        "max": 96.3
+      }
+    }
+  },
+  "wmma": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 54.150000000000006,
+        "min": 54.1,
+        "max": 54.2
+      },
+      "predicted_per_second": {
+        "median": 70.4,
+        "min": 69.7,
+        "max": 71.1
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1259.45,
+        "min": 1197.7,
+        "max": 1321.2
+      },
+      "predicted_per_second": {
+        "median": 88.1,
+        "min": 75.8,
+        "max": 100.4
+      }
+    }
+  }
+}

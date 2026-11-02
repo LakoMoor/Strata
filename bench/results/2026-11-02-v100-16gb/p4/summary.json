@@ -1,0 +1,86 @@
+{
+  "baseline": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 59.8,
+        "min": 59.8,
+        "max": 59.8
+      },
+      "predicted_per_second": {
+        "median": 72.6,
+        "min": 72.6,
+        "max": 72.6
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 1313.0,
+        "min": 1313.0,
+        "max": 1313.0
+      },
+      "predicted_per_second": {
+        "median": 98.1,
+        "min": 98.1,
+        "max": 98.1
+      }
+    }
+  },
+  "p4_6": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 44.4,
+        "min": 44.4,
+        "max": 44.4
+      },
+      "predicted_per_second": {
+        "median": 65.4,
+        "min": 65.4,
+        "max": 65.4
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 723.7,
+        "min": 723.7,
+        "max": 723.7
+      },
+      "predicted_per_second": {
+        "median": 67.1,
+        "min": 67.1,
+        "max": 67.1
+      }
+    }
+  },
+  "p4_12": {
+    "code": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 42.7,
+        "min": 42.7,
+        "max": 42.7
+      },
+      "predicted_per_second": {
+        "median": 59.6,
+        "min": 59.6,
+        "max": 59.6
+      }
+    },
+    "code_context": {
+      "runs": 1,
+      "prompt_per_second": {
+        "median": 493.5,
+        "min": 493.5,
+        "max": 493.5
+      },
+      "predicted_per_second": {
+        "median": 57.6,
+        "min": 57.6,
+        "max": 57.6
+      }
+    }
+  }
+}

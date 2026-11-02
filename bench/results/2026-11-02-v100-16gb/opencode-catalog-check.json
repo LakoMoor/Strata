@@ -1,0 +1,15 @@
+{
+  "version": "2.2.2",
+  "model": "strata/coder",
+  "limits": {
+    "context": 262144,
+    "input": 196608,
+    "output": 65536
+  },
+  "variants": [
+    "fast",
+    "think"
+  ],
+  "request_body_max_tokens": 65536,
+  "catalog_from_empty_project": true
+}
