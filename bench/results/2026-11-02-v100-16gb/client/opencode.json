@@ -6,8 +6,7 @@
       "name": "Strata V100 Coder",
       "package": "@opencode/ai/providers/openai-compatible",
       "settings": {
-        "baseURL": "http://127.0.0.1:8000/v1",
-        "apiKey": "{file:/workspace/strata-v100/api-key}"
+        "baseURL": "http://127.0.0.1:8000/v1"
       },
       "models": {
         "coder": {

@@ -1,8 +1,9 @@
 # Tesla V100 16 GB: Strata Coder, 262K context and 64K output budget
 
 Serving endpoint updated on 3 November 2026 to `http://127.0.0.1:8000/v1`.
-The service now binds `0.0.0.0:8000` with bearer authentication. OpenCode reads
-the key from a server-only file. Historical measurements retain their original
+The dashboard and API now share `0.0.0.0:8000` **without authentication**, as explicitly
+requested by the owner. The engine binds localhost:18080. See
+[dashboard deployment](../../../deploy/v100-dashboard/README.md). Historical measurements retain their original
 endpoint and authentication settings.
 
 Measured on 2 November 2026. The selected profile runs **Coder IQ1_M on one V100**,

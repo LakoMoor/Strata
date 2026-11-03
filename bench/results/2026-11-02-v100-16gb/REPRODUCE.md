@@ -1,5 +1,10 @@
 # Reproduce this machine's setup
 
+> Current deployment (3 November): the no-key dashboard owns port 8000 and manages
+> a private backend on 18080. Use [its deployment instructions](../../../deploy/v100-dashboard/README.md).
+> The direct Terminal/key commands below describe the previous deployment and are
+> retained for reproduction/rollback. Stop the dashboard first; never run both.
+
 Run the commands below on the GPU server. The model files and engine must already
 be installed. Installation used the signed Terminal release, followed by the
 CUDA 12 engine selected for Volta. The fork does not redistribute model weights.
