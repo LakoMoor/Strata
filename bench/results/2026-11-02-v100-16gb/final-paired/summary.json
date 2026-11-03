@@ -1,0 +1,58 @@
+{
+  "baseline": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 56.3,
+        "min": 52.4,
+        "max": 60.2
+      },
+      "predicted_per_second": {
+        "median": 72.8,
+        "min": 72.1,
+        "max": 73.5
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1654.65,
+        "min": 1650.0,
+        "max": 1659.3
+      },
+      "predicted_per_second": {
+        "median": 97.80000000000001,
+        "min": 97.7,
+        "max": 97.9
+      }
+    }
+  },
+  "candidate": {
+    "code": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 55.5,
+        "min": 51.1,
+        "max": 59.9
+      },
+      "predicted_per_second": {
+        "median": 73.80000000000001,
+        "min": 72.9,
+        "max": 74.7
+      }
+    },
+    "code_context": {
+      "runs": 2,
+      "prompt_per_second": {
+        "median": 1650.6,
+        "min": 1642.2,
+        "max": 1659.0
+      },
+      "predicted_per_second": {
+        "median": 87.6,
+        "min": 73.6,
+        "max": 101.6
+      }
+    }
+  }
+}

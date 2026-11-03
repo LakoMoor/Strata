@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/workspace/models/Qwen3.8-Flash-Next-GSQ-RCO-Coder-IQ1_M-NInfer-v3/Qwen3.8-Flash-Next-GSQ-RCO-Coder-IQ1_M-ninfer-v3.ninfer",
+    "bytes": 32685469696
+  },
+  {
+    "path": "/workspace/strata-v100/data/models/coder-IQ1_M/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf",
+    "bytes": 29608446496
+  }
+]

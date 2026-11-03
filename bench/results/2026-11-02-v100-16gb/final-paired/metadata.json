@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-11-02T18:07:50Z",
+  "config_sha256": "def0999e3b4dd285cd8ffa645f1529a4604b7f363dea5422421ab158b6a68a73",
+  "candidate_config_sha256": "2e052309f4cf37b10feb3b50147c9a224e9f59298c67136d8443112b8e5bc871",
+  "strata_version": "strata 0.2.9 (build 0.1.55; python 3.12.15 at /workspace/strata-v100/runtime/terminal/0.1.55/python/bin/python3.12)",
+  "arms": {
+    "baseline": {
+      "env": {},
+      "args": {},
+      "config": {}
+    },
+    "candidate": {
+      "env": {},
+      "args": {},
+      "config": {}
+    }
+  },
+  "rounds": 2,
+  "max_new": 512,
+  "long_words": 12000,
+  "temperature": 0,
+  "seed": 42,
+  "thinking": false,
+  "limits": "synthetic coding prompts; adaptive caches; no code execution or quality score"
+}

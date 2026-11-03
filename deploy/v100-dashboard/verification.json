@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-11-03T02:49:53Z",
+  "dashboard_http": 200,
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-coder-iq1_m",
+    "images": false,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "settings": {
+    "context": 262144,
+    "kv_resident": 32768,
+    "spec": 4,
+    "spec_min_p": 0.5,
+    "temperature": 0.7,
+    "max_tokens": 65536,
+    "thinking": false
+  },
+  "native_restart_completed": true,
+  "sse_without_key": true,
+  "sse_done": true,
+  "busy_restart_http": 400,
+  "post_restart_reply": "OK",
+  "metrics_available": true,
+  "local_http_integration_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "compose_config": "passed",
+  "docker_image_build": "not run; no running Docker daemon",
+  "docker_compose_deployment": "not run; Docker unavailable inside remote Jupyter container",
+  "deployment": "native background supervisor, existing signed Strata runtime",
+  "browser_qa": {
+    "desktop": "1440x1000; real metrics, save settings, restart, streaming Python output verified",
+    "mobile": "390x844; no horizontal overflow (document width 390)",
+    "console_errors": 0
+  },
+  "lan_api_without_key": "passed from owner computer",
+  "public_domain_port_8000": "not established; use tested LAN endpoint"
+}

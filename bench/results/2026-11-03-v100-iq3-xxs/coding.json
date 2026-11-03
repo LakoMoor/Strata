@@ -1,0 +1,84 @@
+[
+  {
+    "case": "coding",
+    "elapsed_s": 3.6553627729881555,
+    "response": {
+      "id": "chatcmpl-4846290dda094f7187ef23c0",
+      "object": "chat.completion",
+      "created": 1793676448,
+      "model": "qwen3.8-flash-next-iq3_xxs",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "```python\ndef binary_search(items, target):\n    low = 0\n    high = len(items) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if items[mid] == target:\n            return mid\n        elif items[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n\n# Usage example\nitems = [1, 3, 5, 7, 9, 11, 13]\nprint(binary_search(items, 7))   # Output: 3\nprint(binary_search(items, 6))   # Output: -1\n```"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 41,
+        "completion_tokens": 155,
+        "total_tokens": 196,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 41,
+        "prompt_ms": 826.9,
+        "prompt_per_token_ms": 20.168,
+        "prompt_per_second": 49.6,
+        "predicted_n": 155,
+        "predicted_ms": 2807.2,
+        "predicted_per_token_ms": 18.111,
+        "predicted_per_second": 55.2,
+        "draft_n": 123,
+        "draft_n_accepted": 112
+      }
+    }
+  },
+  {
+    "case": "coding-module",
+    "elapsed_s": 13.282515262952074,
+    "response": {
+      "id": "chatcmpl-736ea91792ed4eb889e631a6",
+      "object": "chat.completion",
+      "created": 1793676452,
+      "model": "qwen3.8-flash-next-iq3_xxs",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "```python\nfrom collections import OrderedDict\nfrom typing import Any, Optional\n\n\nclass LRUCache:\n    def __init__(self, capacity: int) -> None:\n        self.capacity = capacity\n        self.cache: OrderedDict[Any, Any] = OrderedDict()\n\n    def get(self, key: Any) -> Optional[Any]:\n        if key not in self.cache:\n            return None\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: Any, value: Any) -> None:\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n\n\n# Usage example\ncache = LRUCache(capacity=2)\ncache.put(\"a\", 1)\ncache.put(\"b\", 2)\nprint(cache.get(\"a\"))  # 1 (moves \"a\" to end)\ncache.put(\"c\", 3)      # evicts \"b\" (least recently used)\nprint(cache.get(\"b\"))  # None\nprint(cache.get(\"c\"))  # 3\n```"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 32,
+        "completion_tokens": 256,
+        "total_tokens": 288,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32,
+        "prompt_ms": 1104.3,
+        "prompt_per_token_ms": 34.509,
+        "prompt_per_second": 29.0,
+        "predicted_n": 256,
+        "predicted_ms": 3692.3,
+        "predicted_per_token_ms": 14.423,
+        "predicted_per_second": 69.3,
+        "draft_n": 215,
+        "draft_n_accepted": 180
+      }
+    }
+  }
+]

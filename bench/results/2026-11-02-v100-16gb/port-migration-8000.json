@@ -1,0 +1,21 @@
+{
+  "changed_on_local_date": "2026-11-03",
+  "timezone": "Europe/Moscow",
+  "old_port": 18080,
+  "new_port": 8000,
+  "bind_host": "127.0.0.1",
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-coder-iq1_m",
+    "images": false,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "smoke_answer": "OK",
+  "opencode_endpoints_updated": true,
+  "old_listener_closed": true,
+  "ninfer_router_stopped": true
+}

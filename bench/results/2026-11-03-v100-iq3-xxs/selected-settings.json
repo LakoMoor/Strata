@@ -1,0 +1,34 @@
+{
+  "terminal_version": "0.2.9",
+  "engine_version": "0.1.55",
+  "backend": "CUDA 12",
+  "family": "qwen",
+  "model": "IQ3_XXS",
+  "model_id": "qwen3.8-flash-next-iq3_xxs",
+  "gpu": [
+    0
+  ],
+  "context": 262144,
+  "kv": "int8",
+  "kv_resident": 32768,
+  "ple_io": "mmap",
+  "expert_cache": "auto",
+  "prefill": "auto",
+  "pool_workers": 32,
+  "spec": 4,
+  "spec_min_p": 0.5,
+  "prompt_lookup": "release default; verification window up to 6, MTP cap 4",
+  "parallel": 1,
+  "vision": "off",
+  "env": {
+    "STRATA_SM70_TABLE": "1"
+  },
+  "api_host": "0.0.0.0",
+  "api_port": 8000,
+  "api_auth": "none (explicit owner request)",
+  "backend_host": "127.0.0.1",
+  "backend_port": 18080,
+  "client_context_limit": 262144,
+  "client_input_limit": 196608,
+  "client_output_limit": 65536
+}

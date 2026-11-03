@@ -1,0 +1,231 @@
+{
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq3_xxs",
+    "images": false,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "thinking": false,
+  "temperature": 0,
+  "cases": [
+    {
+      "target": 32768,
+      "depth_percent": 10,
+      "counted_input": 32773,
+      "corpus": "random_words",
+      "requested_max_tokens": 64,
+      "usage": {
+        "prompt_tokens": 32773,
+        "completion_tokens": 12,
+        "total_tokens": 32785,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32773,
+        "prompt_ms": 22281.3,
+        "prompt_per_token_ms": 0.68,
+        "prompt_per_second": 1470.9,
+        "predicted_n": 12,
+        "predicted_ms": 188.6,
+        "predicted_per_token_ms": 15.717,
+        "predicted_per_second": 63.6,
+        "draft_n": 9,
+        "draft_n_accepted": 9
+      },
+      "expected": "copper-falcon-552166",
+      "answer": "copper-falcon-552166",
+      "found": true,
+      "seconds": 28.351396519923583
+    },
+    {
+      "target": 32768,
+      "depth_percent": 50,
+      "counted_input": 32779,
+      "corpus": "random_words",
+      "requested_max_tokens": 64,
+      "usage": {
+        "prompt_tokens": 32779,
+        "completion_tokens": 12,
+        "total_tokens": 32791,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32779,
+        "prompt_ms": 21788.6,
+        "prompt_per_token_ms": 0.665,
+        "prompt_per_second": 1504.4,
+        "predicted_n": 12,
+        "predicted_ms": 193.4,
+        "predicted_per_token_ms": 16.117,
+        "predicted_per_second": 62.0,
+        "draft_n": 9,
+        "draft_n_accepted": 8
+      },
+      "expected": "copper-falcon-386211",
+      "answer": "copper-falcon-386211",
+      "found": true,
+      "seconds": 22.03351650899276
+    },
+    {
+      "target": 32768,
+      "depth_percent": 90,
+      "counted_input": 32761,
+      "corpus": "random_words",
+      "requested_max_tokens": 64,
+      "usage": {
+        "prompt_tokens": 32761,
+        "completion_tokens": 12,
+        "total_tokens": 32773,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32761,
+        "prompt_ms": 20416.6,
+        "prompt_per_token_ms": 0.623,
+        "prompt_per_second": 1604.6,
+        "predicted_n": 12,
+        "predicted_ms": 167.4,
+        "predicted_per_token_ms": 13.95,
+        "predicted_per_second": 71.7,
+        "draft_n": 9,
+        "draft_n_accepted": 9
+      },
+      "expected": "copper-falcon-144175",
+      "answer": "copper-falcon-144175",
+      "found": true,
+      "seconds": 27.395079370122403
+    },
+    {
+      "target": 131072,
+      "depth_percent": 50,
+      "counted_input": 131067,
+      "corpus": "random_words",
+      "requested_max_tokens": 64,
+      "usage": {
+        "prompt_tokens": 131067,
+        "completion_tokens": 12,
+        "total_tokens": 131079,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 131067,
+        "prompt_ms": 95115.7,
+        "prompt_per_token_ms": 0.726,
+        "prompt_per_second": 1378.0,
+        "predicted_n": 12,
+        "predicted_ms": 284.9,
+        "predicted_per_token_ms": 23.742,
+        "predicted_per_second": 42.1,
+        "draft_n": 13,
+        "draft_n_accepted": 6
+      },
+      "expected": "copper-falcon-846098",
+      "answer": "copper-falcon-846098",
+      "found": true,
+      "seconds": 102.95450271479785
+    },
+    {
+      "target": 196000,
+      "depth_percent": 50,
+      "counted_input": 196001,
+      "corpus": "random_words",
+      "requested_max_tokens": 65536,
+      "usage": {
+        "prompt_tokens": 196001,
+        "completion_tokens": 12,
+        "total_tokens": 196013,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 196001,
+        "prompt_ms": 157665.8,
+        "prompt_per_token_ms": 0.804,
+        "prompt_per_second": 1243.1,
+        "predicted_n": 12,
+        "predicted_ms": 228.5,
+        "predicted_per_token_ms": 19.042,
+        "predicted_per_second": 52.5,
+        "draft_n": 11,
+        "draft_n_accepted": 9
+      },
+      "expected": "copper-falcon-817310",
+      "answer": "copper-falcon-817310",
+      "found": true,
+      "seconds": 166.97941531892866
+    },
+    {
+      "target": 131072,
+      "depth_percent": 50,
+      "counted_input": 131046,
+      "corpus": "source_code",
+      "requested_max_tokens": 64,
+      "usage": {
+        "prompt_tokens": 131046,
+        "completion_tokens": 12,
+        "total_tokens": 131058,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 131046,
+        "prompt_ms": 96542.1,
+        "prompt_per_token_ms": 0.737,
+        "prompt_per_second": 1357.4,
+        "predicted_n": 12,
+        "predicted_ms": 251.7,
+        "predicted_per_token_ms": 20.975,
+        "predicted_per_second": 47.7,
+        "draft_n": 11,
+        "draft_n_accepted": 9
+      },
+      "expected": "copper-falcon-101243",
+      "answer": "copper-falcon-101243",
+      "found": true,
+      "seconds": 106.47496801894158
+    }
+  ],
+  "full_65536_token_generation_exercised": false,
+  "output_budget": {
+    "requested_max_tokens": 65536,
+    "http_accepted": true,
+    "usage": {
+      "prompt_tokens": 16,
+      "completion_tokens": 2,
+      "total_tokens": 18,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "READY"
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  }
+}

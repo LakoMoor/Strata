@@ -1,0 +1,51 @@
+name: strata-v100
+services:
+  inference:
+    build: .
+    image: strata-v100-dashboard:0.1.0
+    restart: unless-stopped
+    init: true
+    ports:
+      - "0.0.0.0:8000:8000"
+    environment:
+      STRATA_SM70_TABLE: "1"
+      NVIDIA_VISIBLE_DEVICES: "0"
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      # Preserve absolute model/runtime paths from the measured configuration.
+      - type: bind
+        source: ${STRATA_ROOT:-/workspace/strata-v100}/runtime
+        target: /workspace/strata-v100/runtime
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${STRATA_ROOT:-/workspace/strata-v100}/data
+        target: /workspace/strata-v100/data
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${STRATA_ENGINE_DIR:-/root/.local/share/strata/components/engine/0.1.55-linux-x86_64-cuda-cuda12}
+        target: /root/.local/share/strata/components/engine/0.1.55-linux-x86_64-cuda-cuda12
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${STRATA_ROOT:-/workspace/strata-v100}/dashboard-state
+        target: /workspace/strata-v100/dashboard-state
+        bind: {create_host_path: false}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    ulimits:
+      memlock: {soft: -1, hard: -1}
+    shm_size: 2gb
+    stop_grace_period: 90s
+    healthcheck:
+      test: ["CMD", "/workspace/strata-v100/runtime/terminal/0.1.55/python/bin/python3.12", "-c", "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8000/dashboard/status',timeout=5)); assert d['state'] not in ('error',)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15m
