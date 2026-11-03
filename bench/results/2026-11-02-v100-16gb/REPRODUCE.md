@@ -14,15 +14,18 @@ The installed executable is `/workspace/strata-v100/bin/strata`.
 /workspace/strata-v100/bin/strata launch --stop --preset v100-coder-256k
 ```
 
-The equivalent explicit launch on this server:
+The equivalent explicit launch on this server reads the existing key without
+printing it:
 
 ```sh
+STRATA_API_KEY="$(cat /workspace/strata-v100/api-key)" \
 /workspace/strata-v100/bin/strata launch \
   --family coder --model IQ1_M --context 262144 --kv int8 \
   --vision off --parallel 1 --gpu 0 \
   --data-dir /workspace/strata-v100/data \
   --set mtp-draft-vocab=/workspace/strata-v100/data/draft_vocab_cyrillic.bin \
-  --set STRATA_SM70_TABLE=1 --port 8000 --yes --no-tui \
+  --set STRATA_SM70_TABLE=1 --access lan --api-key-env STRATA_API_KEY \
+  --port 8000 --yes --no-tui \
   --save-preset v100-coder-256k
 ```
 
@@ -31,7 +34,11 @@ API addresses on the server:
 - Chat Completions and Responses: `http://127.0.0.1:8000/v1`.
 - Anthropic Messages: `http://127.0.0.1:8000`.
 
-The service listens on loopback. Port 8080 was occupied by another program and
+The service listens on `0.0.0.0:8000` with bearer authentication. Local clients
+can continue using `127.0.0.1:8000`. The key is stored in
+`/workspace/strata-v100/api-key` (mode 0600), and OpenCode reads that file with
+`{file:/workspace/strata-v100/api-key}`. The key is not included in this fork.
+Port 8080 was occupied by another program and
 was not changed. On 3 November 2026 Strata moved from 18080 to 8000 at the
 user’s request; the previous NInfer router was stopped to free that port.
 The recorded benchmark requests retain their original endpoint.
@@ -79,6 +86,7 @@ Restore the production preset before the long-context checks:
 /workspace/strata-v100/bin/strata launch --preset v100-coder-256k --no-tui
 python3 /workspace/strata-v100/v100_validate.py \
   --url http://127.0.0.1:8000 \
+  --api-key-file /workspace/strata-v100/api-key \
   --corpus-root /workspace/strata-v100/source \
   --out /workspace/strata-v100/results/repeat-validation.json
 ```
@@ -107,6 +115,7 @@ To repeat the multi-turn cache and queued-client checks against a loaded server:
 ```sh
 python3 /workspace/strata-v100/v100_agent_check.py \
   --url http://127.0.0.1:8000 \
+  --api-key-file /workspace/strata-v100/api-key \
   --source-root /workspace/strata-v100/source \
   --out /workspace/strata-v100/results/repeat-agent-checks.json
 ```

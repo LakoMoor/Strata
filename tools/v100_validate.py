@@ -7,15 +7,19 @@ This is a small recall check, not an overall coding-quality benchmark.
 """
 import argparse
 import json
+import os
 from pathlib import Path
 import random
 import time
 import urllib.request
 
+AUTH_KEY = os.environ.get("STRATA_KEY", "")
+
 
 def request(base, path, body=None):
     req = urllib.request.Request(base + path, data=json.dumps(body).encode() if body is not None else None,
-                                 headers={"Content-Type": "application/json"})
+                                 headers={"Content-Type": "application/json",
+                                          **({"Authorization": "Bearer " + AUTH_KEY} if AUTH_KEY else {})})
     with urllib.request.urlopen(req, timeout=1800) as response:
         return json.load(response)
 
@@ -33,11 +37,15 @@ def prompt(words, depth, token, seed, corpus=None):
 
 
 def main():
+    global AUTH_KEY
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--url", default="http://127.0.0.1:8000")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--api-key-file", help="read the API key without putting it in command arguments")
     ap.add_argument("--corpus-root", help="also check 128K of public Strata C++ and documentation")
     a = ap.parse_args()
+    if a.api_key_file:
+        AUTH_KEY = Path(a.api_key_file).read_text().strip()
     out = Path(a.out)
     if out.exists():
         ap.error("choose a new output file")

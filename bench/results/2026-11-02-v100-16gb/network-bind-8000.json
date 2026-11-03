@@ -1,0 +1,21 @@
+{
+  "bind_host": "0.0.0.0",
+  "port": 8000,
+  "api_auth": "bearer",
+  "unauthenticated_status": 401,
+  "authenticated_answer": "OK",
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-coder-iq1_m",
+    "images": false,
+    "api_key": true,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "key_file_mode": "0600",
+  "opencode_key_reference": "server file",
+  "lan_request_verified": true,
+  "external_domain_request_verified": false
+}

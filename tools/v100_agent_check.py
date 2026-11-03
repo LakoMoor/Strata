@@ -6,6 +6,7 @@ model-requested tools. The tool definitions and documents are test inputs only.
 """
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -15,13 +16,15 @@ def main():
     ap.add_argument("--url", default="http://127.0.0.1:8000")
     ap.add_argument("--source-root", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--api-key-file", help="read the API key without putting it in command arguments")
     a = ap.parse_args()
     out = Path(a.out)
     if out.exists():
         ap.error("choose a new output file")
     sys.path.insert(0, str(Path(a.source_root) / "tools"))
     from strata_bench import Suite
-    suite = Suite(a.url.rstrip("/"), "", 262144, 1, False, quick=True,
+    key = Path(a.api_key_file).read_text().strip() if a.api_key_file else os.environ.get("STRATA_KEY", "")
+    suite = Suite(a.url.rstrip("/"), key, 262144, 1, False, quick=True,
                   log=lambda *args, **kwargs: print(*args, **kwargs, flush=True))
     suite.run_agent()
     suite.runs = 2
