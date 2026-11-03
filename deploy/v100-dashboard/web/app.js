@@ -56,6 +56,9 @@ function draw() {
 function text(id,value){$(id).textContent=value;}
 function renderMetrics(m){
  const h=m.hardware||{},live=m.live||{},tot=m.totals||{},eng=m.engine||{},rows=m.requests||[];
+ const model=String(eng.model||status?.health?.model||'');
+ const quant=model.includes('coder')?'IQ1_M':model.includes('iq3_xxs')?'IQ3_XXS':model.includes('iq3_s')?'IQ3_S':'Flash-Next';
+ text('model-variant',model.includes('coder')?'Coder':quant);text('model-quant',quant);
  const current=Number(h.tok_s||live.tok_s||0);
  samples.push(current);cpus.push(Number(h.cpu||0));samples=samples.slice(-60);cpus=cpus.slice(-60);draw();
  text('speed',number(current,1));text('speed-note',live.state==='idle'?'Сейчас нет активной генерации':'Генерация в процессе');
@@ -67,7 +70,7 @@ function renderMetrics(m){
  if(!rows.length){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=6;cell.className='empty';cell.textContent='Запросов пока нет. Отправьте первый в песочнице.';row.append(cell);$('request-rows').append(row);}
  rows.slice(0,6).forEach(r=>{
    const tr=document.createElement('tr');const when=r.finished||r.at||r.time||r.started;const date=when?new Date(when*1000).toLocaleTimeString('ru-RU'):'—';
-   const vals=[date,'Qwen3.8 · Coder',number(r.prompt_tokens??r.prompt)+' / '+number(r.generated??r.output_tokens),number(r.decode_tok_s??r.tok_s,1)+' ток/с',number(r.duration_s??r.elapsed_s??r.wallclock_s,2)+' с',r.error?'Ошибка':'Завершён'];
+   const vals=[date,'Qwen3.8 · '+(model.includes('coder')?'Coder':quant),number(r.prompt_tokens??r.prompt)+' / '+number(r.generated??r.output_tokens),number(r.decode_tok_s??r.tok_s,1)+' ток/с',number(r.duration_s??r.elapsed_s??r.wallclock_s,2)+' с',r.error?'Ошибка':'Завершён'];
    vals.forEach((v,i)=>{const td=document.createElement('td');if(i===5){const span=document.createElement('span');span.className='result';span.textContent=v;td.append(span);}else td.textContent=v;tr.append(td);});$('request-rows').append(tr);
  });
 }
@@ -96,7 +99,7 @@ $('prompt-form').addEventListener('submit',async e=>{
  e.preventDefault(); if(testAbort)return;
  testAbort=new AbortController();$('send').disabled=true;$('cancel').disabled=false;text('answer','');text('reasoning','');$('reasoning-block').hidden=true;text('test-status','Генерация…');const start=performance.now();
  try{
-  const res=await fetch('/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},signal:testAbort.signal,body:JSON.stringify({model:status?.health?.model||'qwen3.8-flash-next-coder-iq1_m',messages:[{role:'user',content:$('prompt').value}],max_tokens:Number($('test-tokens').value),stream:true,chat_template_kwargs:{enable_thinking:$('test-thinking').checked}})});
+  const res=await fetch('/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},signal:testAbort.signal,body:JSON.stringify({model:status?.health?.model||'qwen3.8-flash-next-iq3_xxs',messages:[{role:'user',content:$('prompt').value}],max_tokens:Number($('test-tokens').value),stream:true,chat_template_kwargs:{enable_thinking:$('test-thinking').checked}})});
   if(!res.ok){const err=await res.json();throw new Error(err.error?.message||res.statusText);}
   const reader=res.body.getReader(),decoder=new TextDecoder();let buffer='',done=false;
   while(!done){const chunk=await reader.read();done=chunk.done;buffer+=decoder.decode(chunk.value||new Uint8Array(),{stream:!done});buffer=buffer.replace(/\r\n/g,'\n');const parts=buffer.split('\n\n');buffer=parts.pop();

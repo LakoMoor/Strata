@@ -1,0 +1,6 @@
+{
+  "function": "binary_search",
+  "cases": 7,
+  "passed": 7,
+  "execution": "Only the AST-inspected function; no model imports or example statements executed; only len available as a builtin."
+}

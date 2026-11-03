@@ -1,0 +1,47 @@
+{
+  "id": "chatcmpl-3ac93461418446adafa5fc31",
+  "object": "chat.completion",
+  "created": 1793676465,
+  "model": "qwen3.8-flash-next-iq3_xxs",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_c8fc966458604680b86a7d3b",
+            "type": "function",
+            "function": {
+              "name": "get_weather",
+              "arguments": "{\"city\":\"Paris\"}"
+            }
+          }
+        ]
+      },
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 272,
+    "completion_tokens": 26,
+    "total_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 272,
+    "prompt_ms": 1872.5,
+    "prompt_per_token_ms": 6.884,
+    "prompt_per_second": 145.3,
+    "predicted_n": 26,
+    "predicted_ms": 405.9,
+    "predicted_per_token_ms": 15.612,
+    "predicted_per_second": 64.1,
+    "draft_n": 21,
+    "draft_n_accepted": 21
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-11-03T03:27:27Z",
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq3_xxs",
+    "images": false,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "settings": {
+    "context": 262144,
+    "kv_resident": 32768,
+    "spec": 4,
+    "spec_min_p": 0.5,
+    "temperature": 0.7,
+    "max_tokens": 65536,
+    "thinking": false
+  },
+  "model_sha256": "219ea929900dfa9ef091f3aa473fdba6874b65fcb36526d7d851ac9e95856d15",
+  "table_reused": true,
+  "ple_io": "mmap",
+  "free_disk_gib": 20.29721450805664
+}

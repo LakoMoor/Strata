@@ -1,5 +1,7 @@
 # Strata Inference Studio · V100
 
+Current model: **Qwen3.8-Flash-Next IQ3_XXS**, ISTA-DASLab original model. The earlier Coder IQ1_M weights were removed at the owner's request to make room. See [IQ3 deployment results](../../bench/results/2026-11-03-v100-iq3-xxs/README.md).
+
 Opt-in dashboard for the measured V100 installation. The stock Strata UI, engine and launch defaults are unchanged.
 
 - Dashboard: `http://192.168.10.64:8000/`
@@ -27,13 +29,14 @@ First installation, before starting the dashboard:
 
 ```sh
 python3 /workspace/strata-v100/dashboard/prepare.py \
+  --launch-config /path/to/existing-strata-run-config.json \
   --output /workspace/strata-v100/dashboard-state/engine.json
-/workspace/strata-v100/bin/strata launch --stop --preset v100-coder-256k
+# Stop the previously running Strata backend before starting the gateway.
 nohup sh /workspace/strata-v100/dashboard/run.sh \
   > /workspace/strata-v100/logs/dashboard.log 2>&1 < /dev/null &
 ```
 
-`prepare.py` takes the selected launch config, removes its API key and network trust/hooks, pins the installed CUDA 12 engine, and refuses to overwrite existing dashboard state. Do not run the old `strata launch` preset while the dashboard owns the GPU.
+`prepare.py --launch-config ...` takes an explicitly selected, trusted launch config, removes its API key and network trust/hooks, pins the installed CUDA 12 engine, and refuses to overwrite existing dashboard state. Do not run the old `strata launch` preset while the dashboard owns the GPU.
 
 Stop the gateway (and its engine) before switching deployment methods:
 
@@ -76,7 +79,7 @@ Native operation and Compose are alternatives. Do not run both. Existing disk sp
 ```sh
 curl http://192.168.10.64:8000/v1/chat/completions \
   -H 'Content-Type: application/json' \
-  -d '{"model":"qwen3.8-flash-next-coder-iq1_m","messages":[{"role":"user","content":"Reply OK"}],"max_tokens":16,"stream":true,"chat_template_kwargs":{"enable_thinking":false}}'
+  -d '{"model":"qwen3.8-flash-next-iq3_xxs","messages":[{"role":"user","content":"Reply OK"}],"max_tokens":16,"stream":true,"chat_template_kwargs":{"enable_thinking":false}}'
 ```
 
 Some OpenAI SDKs require a nonempty client-side `api_key` argument; any placeholder works. The server does not validate it. OpenCode's Strata provider no longer needs the private key-file reference.
@@ -92,4 +95,4 @@ node --check deploy/v100-dashboard/web/app.js
 docker compose -f deploy/v100-dashboard/compose.yaml config --quiet
 ```
 
-The HTTP integration checks verify incremental SSE delivery, no-key forwarding, atomic rejection of invalid settings, prevention of stop/restart during active requests, and cross-origin control rejection. GPU functionality is checked separately on the actual server. See `verification.json` for recorded results and limits.
+The HTTP integration checks verify incremental SSE delivery, no-key forwarding, atomic rejection of invalid settings, prevention of stop/restart during active requests, and cross-origin control rejection. GPU functionality is checked separately on the actual server. The initial gateway checks and limits are in `verification.json`; current IQ3_XXS model checks are linked at the top of this page.

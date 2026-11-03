@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 
 p = argparse.ArgumentParser()
-p.add_argument('--launch-config', default='/root/.local/state/strata/launch/v100-coder-256k.json')
+p.add_argument('--launch-config', required=True, help='existing trusted Strata run config to adapt')
 p.add_argument('--output', required=True)
 p.add_argument('--engine', default='/root/.local/share/strata/components/engine/0.1.55-linux-x86_64-cuda-cuda12/strata')
 a = p.parse_args()

@@ -1,0 +1,33 @@
+{
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq3_xxs",
+    "images": false,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata"
+  },
+  "context_cases_passed": 6,
+  "context_cases_total": 6,
+  "largest_actual_input": 196001,
+  "output_budget_accepted": 65536,
+  "full_65536_generation_exercised": false,
+  "coding_decode_tokens_s": [
+    55.2,
+    69.3
+  ],
+  "coding_measurement": "Two short synthetic requests; other clients active; per-request engine decode timings",
+  "binary_search_cases_passed": 7,
+  "tool_call_passed": true,
+  "agent_failures": [],
+  "clients2_errors": 0,
+  "clients4_errors": 0,
+  "clients2_aggregate_tokens_s": 41.19,
+  "clients4_aggregate_tokens_s": 48.295,
+  "remaining_disk_gib": 20.3,
+  "docker_compose_config": "passed",
+  "docker_build_and_run": "not run; no Docker daemon",
+  "lan_no_key_health": "passed"
+}

@@ -1,5 +1,8 @@
 # Tesla V100 16 GB: Strata Coder, 262K context and 64K output budget
 
+> The active model was later replaced with [Flash-Next IQ3_XXS](../2026-11-03-v100-iq3-xxs/README.md) at the owner's request.
+> The Coder measurements below are historical; its old weights were removed to make room.
+
 Serving endpoint updated on 3 November 2026 to `http://127.0.0.1:8000/v1`.
 The dashboard and API now share `0.0.0.0:8000` **without authentication**, as explicitly
 requested by the owner. The engine binds localhost:18080. See
