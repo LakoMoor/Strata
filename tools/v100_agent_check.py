@@ -12,7 +12,7 @@ import sys
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--url", default="http://127.0.0.1:18080")
+    ap.add_argument("--url", default="http://127.0.0.1:8000")
     ap.add_argument("--source-root", required=True)
     ap.add_argument("--out", required=True)
     a = ap.parse_args()

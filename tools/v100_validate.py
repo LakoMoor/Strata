@@ -34,7 +34,7 @@ def prompt(words, depth, token, seed, corpus=None):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--url", default="http://127.0.0.1:18080")
+    ap.add_argument("--url", default="http://127.0.0.1:8000")
     ap.add_argument("--out", required=True)
     ap.add_argument("--corpus-root", help="also check 128K of public Strata C++ and documentation")
     a = ap.parse_args()

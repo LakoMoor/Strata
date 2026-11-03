@@ -22,19 +22,19 @@ The equivalent explicit launch on this server:
   --vision off --parallel 1 --gpu 0 \
   --data-dir /workspace/strata-v100/data \
   --set mtp-draft-vocab=/workspace/strata-v100/data/draft_vocab_cyrillic.bin \
-  --set STRATA_SM70_TABLE=1 --port 18080 --yes --no-tui \
+  --set STRATA_SM70_TABLE=1 --port 8000 --yes --no-tui \
   --save-preset v100-coder-256k
 ```
 
 API addresses on the server:
 
-- Chat Completions and Responses: `http://127.0.0.1:18080/v1`.
-- Anthropic Messages: `http://127.0.0.1:18080`.
+- Chat Completions and Responses: `http://127.0.0.1:8000/v1`.
+- Anthropic Messages: `http://127.0.0.1:8000`.
 
 The service listens on loopback. Port 8080 was occupied by another program and
-was not changed. The pre-existing NInfer router remains on 8000 with its previous
-Qwen model unloaded. Do not load another full model onto the V100 while using
-Strata.
+was not changed. On 3 November 2026 Strata moved from 18080 to 8000 at the
+user’s request; the previous NInfer router was stopped to free that port.
+The recorded benchmark requests retain their original endpoint.
 
 ## OpenCode v2
 
@@ -78,7 +78,7 @@ Restore the production preset before the long-context checks:
 ```sh
 /workspace/strata-v100/bin/strata launch --preset v100-coder-256k --no-tui
 python3 /workspace/strata-v100/v100_validate.py \
-  --url http://127.0.0.1:18080 \
+  --url http://127.0.0.1:8000 \
   --corpus-root /workspace/strata-v100/source \
   --out /workspace/strata-v100/results/repeat-validation.json
 ```
@@ -106,7 +106,7 @@ To repeat the multi-turn cache and queued-client checks against a loaded server:
 
 ```sh
 python3 /workspace/strata-v100/v100_agent_check.py \
-  --url http://127.0.0.1:18080 \
+  --url http://127.0.0.1:8000 \
   --source-root /workspace/strata-v100/source \
   --out /workspace/strata-v100/results/repeat-agent-checks.json
 ```

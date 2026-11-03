@@ -1,5 +1,8 @@
 # Tesla V100 16 GB: Strata Coder, 262K context and 64K output budget
 
+Serving endpoint updated on 3 November 2026 to `http://127.0.0.1:8000/v1`.
+Historical measurements below retain their original endpoint.
+
 Measured on 2 November 2026. The selected profile runs **Coder IQ1_M on one V100**,
 with **262,144 total tokens**, INT8 KV streaming, MTP depth 4, the default 32 CPU
 workers and `STRATA_SM70_TABLE=1`. The OpenCode v2 profile reserves up to **65,536
